@@ -1,19 +1,101 @@
 
-var mysql = require('mysql');
-
-
-var con = mysql.createConnection({
+const mysql = require('mysql');
+const data = require('./data');
+const bookData = data.book;
+const userData = data.user;
+const connection = mysql.createConnection({
     host: "localhost",
     user: "hitesh",
     password: "password@12345",
     database: "mydb",
-    multipleStatements: true
+    // multipleStatements: true
 });
 
 
-con.connect(function (err) {
+const initialize = async () => {
+
+    await
+        new Promise((res, rej) => {
+            connection.query("DROP TABLE IF EXISTS Books;",
+                (err, result) => {
+                    if (err) rej(err);
+                    else res();
+                });
+        })
+
+    await
+        new Promise((res, rej) => {
+            connection.query("CREATE TABLE Books (id INT AUTO_INCREMENT PRIMARY KEY,title VARCHAR(255) NOT NULL,description VARCHAR(255),genre VARCHAR(255), author VARCHAR(255), rating INT, review VARCHAR(255), FavQuotes VARCHAR(255), section ENUM('0' ,'1', '2' ));",
+                (err, result) => {
+                    if (err) {
+                        rej(err)
+                        // console.log(err)
+                    }
+                    else {
+                        res();
+                    }
+                });
+        })
+    for (let a in bookData) {
+        let element = bookData[a];
+        await new Promise((res, rej) => {
+            connection.query("INSERT INTO Books (title, description, genre, author, rating, review, FavQuotes, section) VALUES (?,?,?,?,?,?,?,?);", [element.title, element.description, element.genre, element.author, element.rating, element.review, element.FavQuotes, element.section], (err, result) => {
+                if (err) {
+                    rej(err)
+                    // console.log(err)
+                }
+                else {
+                    res();
+                }
+            })
+        });
+    }
+
+    await
+        new Promise((res, rej) => {
+            connection.query("DROP TABLE IF EXISTS user;",
+                (err, result) => {
+                    if (err) rej(err);
+                    else res();
+                });
+        })
+
+    await
+        new Promise((res, rej) => {
+            connection.query("CREATE TABLE user (id varchar(100) PRIMARY KEY,isRead VARCHAR(1000),toRead varchar(1000)); ",
+                (err, result) => {
+                    if (err) {
+                        rej(err)
+                        // console.log(err)
+                    }
+                    else {
+                        res();
+                    }
+                });
+        })
+    for (let a in userData) {
+        let element = userData[a];
+        await new Promise((res, rej) => {
+            connection.query("INSERT INTO user (id, isRead, toRead) VALUES (?,?,?);", [element.name, element.isRead, element.toRead], (err, result) => {
+                if (err) {
+                    rej(err)
+                    // console.log(err)
+                }
+                else {
+                    res();
+                }
+            })
+        });
+    }
+
+
+}
+connection.connect(function (err) {
     if (err) return console.log("failed to connect to mysql server/ database", err);
-    else return console.log("connection establish with Datebase!!!!");
+    else {
+        initialize();
+        return console.log("connection establish with Database!!!!");
+    }
 });
 
-module.exports = con;
+module.exports = connection;

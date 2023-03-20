@@ -1,35 +1,133 @@
 let book = [
-
     {
-        title: "Joe Biden: American DreamerJoe Biden:  Osnos",
+        title: "Book1",
+        description: "description1",
+        genre: "genre1",
+        author: "author1",
+        rating: 3,
+        review: "review1",
+        FavQuotes: "FavQuotes1",
+        section: '0'
+
+    },
+    {
+        title: "Book2",
+        description: "description2",
+        genre: "genre2",
+        author: "author2",
+        rating: 3,
+        review: "review2",
+        FavQuotes: "FavQuotes2",
+        section: '0'
+
+    },
+    {
+        title: "Book3",
+        description: "description3",
+        genre: "genre3",
+        author: "author3",
+        rating: 3,
+        review: "review3",
+        FavQuotes: "FavQuotes3",
+        section: '0'
+
+    },
+    {
+        title: "Book4",
+        description: "description4",
+        genre: "genre4",
+        author: "author4",
+        rating: 3,
+        review: "review4",
+        FavQuotes: "FavQuotes4",
+        section: '0'
+
+    },
+    {
+        title: "Book5",
+        description: "description5",
+        genre: "genre5",
+        author: "author5",
+        rating: 3,
+        review: "review5",
+        FavQuotes: "FavQuotes5",
+        section: '0'
+
+    },
+    {
+        title: "Book6",
+        description: "description6",
+        genre: "genre6",
+        author: "author6",
+        rating: 3,
+        review: "review6",
+        FavQuotes: "FavQuotes6",
+        section: '1'
+
+    },
+    {
+        title: "Book7",
+        description: "description7",
+        genre: "genre7",
+        author: "author7",
+        rating: 3,
+        review: "review7",
+        FavQuotes: "FavQuotes7",
+        section: '2'
+
+    },
+    {
+        title: "Book8",
+        description: "description8",
+        genre: "genre8",
+        author: "author8",
+        rating: 3,
+        review: "review8",
+        FavQuotes: "FavQuotes8",
+        section: '2'
+
+    },
+    {
+        title: "Book9",
+        description: "description9",
+        genre: "genre9",
+        author: "author9",
+        rating: 3,
+        review: "review9",
+        FavQuotes: "FavQuotes9",
+        section: '1'
+
+    },
+    {
+        title: "Book10",
         description: "description10",
-        genre: "biography",
-        author: "Evan OsnosEvan",
-        rating: 7,
-        review: "reviewBeautifully written . . . A light, enjoyable read . . . Osnos gives you a taste of what could be to come under a Biden presidency . He has a delightful turn of phrase 10",
+        genre: "genre10",
+        author: "author10",
+        rating: 3,
+        review: "review10",
         FavQuotes: "FavQuotes10",
         section: '0'
 
     },
     {
-        title: "Dharma: Decoding the Epics for a Meaningful Life",
-        description: "desStories can be both entertaining and educative.cription11",
-        genre: "history",
-        author: "Amish",
-        rating: 9,
-        review: "I'll be honest - I did enjoy reading the book initially. It seemed like a good mix of storytelling and touching upon the core subject it is based on - Dharma - and its many facets.",
-        FavQuotes: "It's better to read 1 book 10 times than reading 10 books at once",
+        title: "Book11",
+        description: "description11",
+        genre: "genre11",
+        author: "author11",
+        rating: 3,
+        review: "review11",
+        FavQuotes: "FavQuotes11",
         section: '2'
 
     },
     {
-        title: "The Last Resort",
-        description: "When Amelia is invited to an all-expenses-paid retreat on a private island, the mysterious offer is too good to refuse. ",
-        genre: "mystery",
-        author: "sushi holiday",
-        rating: 6,
-        review: "A twisty thriller that keeps you guessing until the last page. --Candis",
-        FavQuotes: "Oh dear book, how could you do this to me?",
+        title: "Book12",
+        description: "description12",
+        genre: "genre12",
+        author: "author12",
+        rating: 3,
+        review: "review12",
+        FavQuotes: "FavQuotes12",
         section: '1'
 
     },
@@ -37,13 +135,13 @@ let book = [
 let user = [
     {
         name: "Hitesh",
-        toRead: 'Dharma: Decoding the Epics for a Meaningful Life,The Last Resort',
-        isRead: 'Joe Biden: American DreamerJoe Biden:  Osnos'
+        toRead: 'Book5,Book9',
+        isRead: 'Book2,Book3'
     },
     {
         name: "Dinesh",
-        toRead: 'Joe Biden: American DreamerJoe Biden:  Osnos',
-        isRead: 'Dharma: Decoding the Epics for a Meaningful Life'
+        toRead: 'Book6,Book8',
+        isRead: 'Book2,Book1'
     }
 ]
 
